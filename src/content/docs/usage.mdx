@@ -1,0 +1,61 @@
+---
+title: Usage
+description: Learn how to use Snow Effect in your project.
+---
+import { Aside } from '@astrojs/starlight/components';
+
+
+<Aside>To use Snow Effect in your project, you must have the package installed.</Aside>
+
+## Implementation
+### Simple websites or SPA
+After installing the package, you can use the following code to add the snow effect to your website.
+
+```html
+<snow-effect
+    color="white"
+    flakes="100"
+    speed="1"
+/>
+```
+<Aside type="tip" title="For SPA">Place this custom element tag in the root or main file of your SPA to make the effect visible across all pages.</Aside>
+### Astro
+For Astro projects, you can use the following code.
+
+```html
+// src/pages/index.astro
+---
+//server side stuffs
+---
+<snow-effect
+    color="white"
+    flakes="100"
+    speed="1"
+/>
+<script>
+import 'snow-effect';
+</script>
+```
+### Nuxt
+First, add the module to your `nuxt.config.ts` file.
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: [
+    'nuxt-snow-effect'
+  ]
+})
+```
+Then, you can use the following code in your component.
+
+```vue
+// app.vue
+<template>
+  <SnowEffectComponent
+    color="white"
+    flakes="100"
+    speed="1"
+  />
+</template>
+```
